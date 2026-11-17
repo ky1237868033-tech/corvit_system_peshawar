@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corvit Systems Peshawar | IT Training & Professional Certifications</title>
+  <meta name="description" content="Master in-demand IT skills in Peshawar: Python & AI, Web & App Development, CCNA, AWS, Cyber Security and Graphic Design with hands-on labs and certification prep." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS (CDN) + brand theme -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            navy:   { 900: '#0A192F', 800: '#0F2342', 700: '#1E3A8A' },  // primary tones
+            accent: { cyan: '#00F0FF', green: '#10B981', greenDark: '#059669' } // highlights / CTAs
+          },
+          boxShadow: { glow: '0 10px 40px -10px rgba(16,185,129,.55)' }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Subtle grid pattern for hero background */
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+    /* Hide scrollbar on the testimonial slider */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    /* Reveal-on-scroll animation */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+    /* Offset anchor targets for the sticky header */
+    section[id] { scroll-margin-top: 80px; }
+  </style>
+</head>
+
+<body class="font-sans text-slate-700 bg-white antialiased">
+
+  <!-- =====================================================
+       1. NAVIGATION BAR
+  ====================================================== -->
+  <header id="navbar" class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Main navigation">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2.5" aria-label="Corvit Systems Peshawar - Home">
+        <span class="grid place-items-center h-9 w-9 rounded-lg bg-accent-green text-navy-900 font-extrabold text-lg">C</span>
+        <span class="leading-tight">
+          <span class="block text-white font-extrabold tracking-tight">Corvit Systems</span>
+          <span class="block text-[11px] font-semibold uppercase tracking-[.2em] text-accent-cyan">Peshawar</span>
+        </span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-200">
+        <li><a href="#home" class="nav-link hover:text-accent-cyan transition">Home</a></li>
+        <li><a href="#courses" class="nav-link hover:text-accent-cyan transition">Courses</a></li>
+        <li><a href="#certifications" class="nav-link hover:text-accent-cyan transition">Certifications</a></li>
+        <li><a href="#stories" class="nav-link hover:text-accent-cyan transition">Success Stories</a></li>
+        <li><a href="#about" class="nav-link hover:text-accent-cyan transition">About Us</a></li>
+        <li><a href="#contact" class="nav-link hover:text-accent-cyan transition">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="#enroll" class="hidden sm:inline-flex items-center rounded-lg bg-accent-green px-4 py-2 text-sm font-bold text-navy-900 shadow-glow hover:bg-emerald-400 transition">
+          Enroll Now
+        </a>
+        <!-- Mobile menu toggle -->
+        <button id="menu-btn" class="lg:hidden p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent-cyan"
+                aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+          <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-navy-900">
+      <ul class="px-4 py-4 space-y-1 text-slate-100 font-semibold">
+        <li><a href="#home" class="block rounded-md px-3 py-2 hover:bg-white/10">Home</a></li>
+        <li><a href="#courses" class="block rounded-md px-3 py-2 hover:bg-white/10">Courses</a></li>
+        <li><a href="#certifications" class="block rounded-md px-3 py-2 hover:bg-white/10">Certifications</a></li>
+        <li><a href="#stories" class="block rounded-md px-3 py-2 hover:bg-white/10">Success Stories</a></li>
+        <li><a href="#about" class="block rounded-md px-3 py-2 hover:bg-white/10">About Us</a></li>
+        <li><a href="#contact" class="block rounded-md px-3 py-2 hover:bg-white/10">Contact</a></li>
+        <li class="pt-2"><a href="#enroll" class="block text-center rounded-lg bg-accent-green px-4 py-2.5 font-bold text-navy-900">Book Free Consultation</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         2. HERO SECTION
+    ====================================================== -->
+    <section id="home" class="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 text-white">
+      <div class="hero-grid absolute inset-0" aria-hidden="true"></div>
+      <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-accent-cyan/20 blur-3xl" aria-hidden="true"></div>
+      <div class="absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-accent-green/20 blur-3xl" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 lg:pt-24 lg:pb-16 grid lg:grid-cols-12 gap-12 items-center">
+
+        <div class="lg:col-span-7">
+          <span class="inline-flex items-center gap-2 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 px-3 py-1 text-xs font-semibold text-accent-cyan">
+            <span class="h-2 w-2 rounded-full bg-accent-green animate-pulse"></span> New batches starting soon in Peshawar
+          </span>
+
+          <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
+            Master In-Demand IT Skills &amp; Launch Your
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-green">Tech Career</span>
+            in Peshawar.
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-lg text-slate-300 leading-relaxed">
+            Professional training led by expert trainers, built around real-world labs, and aligned with global
+            certifications &mdash; Cisco, AWS, Python, Cyber Security and more. Learn it. Practice it. Get hired for it.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#courses" class="inline-flex justify-center items-center gap-2 rounded-lg bg-accent-green px-6 py-3.5 font-bold text-navy-900 shadow-glow hover:bg-emerald-400 transition">
+              Explore Courses
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#enroll" class="inline-flex justify-center items-center rounded-lg border border-white/30 px-6 py-3.5 font-bold text-white hover:bg-white/10 transition">
+              Book Free Career Counseling
+            </a>
+          </div>
+
+          <!-- Certification chips -->
+          <div class="mt-8 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-300">
+            <span class="text-slate-400">Prep for:</span>
+            <span class="rounded-md bg-white/10 px-2.5 py-1">Cisco CCNA</span>
+            <span class="rounded-md bg-white/10 px-2.5 py-1">AWS</span>
+            <span class="rounded-md bg-white/10 px-2.5 py-1">Python</span>
+            <span class="rounded-md bg-white/10 px-2.5 py-1">CompTIA Security+</span>
+            <span class="rounded-md bg-white/10 px-2.5 py-1">CEH</span>
+          </div>
+        </div>
+
+        <!-- Decorative "terminal" card -->
+        <div class="lg:col-span-5" aria-hidden="true">
+          <div class="rounded-2xl border border-white/10 bg-navy-900/80 shadow-2xl backdrop-blur">
+            <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+              <span class="h-3 w-3 rounded-full bg-red-400"></span>
+              <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+              <span class="h-3 w-3 rounded-full bg-accent-green"></span>
+              <span class="ml-3 text-xs text-slate-400">career_path.py</span>
+            </div>
+            <pre class="overflow-x-auto p-5 text-[13px] leading-7 font-mono text-slate-200"><code><span class="text-accent-cyan">class</span> <span class="text-yellow-300">Student</span>:
+    <span class="text-accent-cyan">def</span> <span class="text-yellow-300">__init__</span>(self):
+        self.skills = [<span class="text-accent-green">"Python"</span>, <span class="text-accent-green">"Cloud"</span>,
+                       <span class="text-accent-green">"Networking"</span>, <span class="text-accent-green">"Security"</span>]
+        self.labs   = <span class="text-accent-green">"100% hands-on"</span>
+
+    <span class="text-accent-cyan">def</span> <span class="text-yellow-300">launch_career</span>(self):
+        self.get_certified()
+        self.build_portfolio()
+        <span class="text-accent-cyan">return</span> <span class="text-accent-green">"Hired 🚀"</span></code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust badge / stats bar -->
+      <div class="relative border-t border-white/10 bg-navy-900/60 backdrop-blur">
+        <dl class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <dt class="text-xs uppercase tracking-wider text-slate-400">Students Trained</dt>
+            <dd class="mt-1 text-3xl font-extrabold text-white"><span class="counter" data-target="5000">0</span>+</dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-wider text-slate-400">Practical Labs</dt>
+            <dd class="mt-1 text-3xl font-extrabold text-white"><span class="counter" data-target="100">0</span>%</dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-wider text-slate-400">Industry Expert Trainers</dt>
+            <dd class="mt-1 text-3xl font-extrabold text-white">Certified</dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-wider text-slate-400">Global Certifications</dt>
+            <dd class="mt-1 text-3xl font-extrabold text-white"><span class="counter" data-target="10">0</span>+</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         3. FEATURED TECH COURSES
+    ====================================================== -->
+    <section id="courses" class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center reveal">
+          <p class="text-sm font-bold uppercase tracking-widest text-accent-greenDark">Featured Courses</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Pick a track. Build a career.</h2>
+          <p class="mt-4 text-slate-600">Industry-aligned programs designed for students, fresh graduates and working professionals.</p>
+        </div>
+
+        <!-- Category filter tabs -->
+        <div id="course-tabs" class="mt-10 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Filter courses by category">
+          <button data-filter="all"        class="tab-btn" role="tab" aria-selected="true">All</button>
+          <button data-filter="dev"        class="tab-btn" role="tab" aria-selected="false">Development &amp; AI</button>
+          <button data-filter="infra"      class="tab-btn" role="tab" aria-selected="false">Networking &amp; Cloud</button>
+          <button data-filter="security"   class="tab-btn" role="tab" aria-selected="false">Security</button>
+          <button data-filter="creative"   class="tab-btn" role="tab" aria-selected="false">Creative</button>
+        </div>
+
+        <!-- Cards rendered by JS from the COURSES array (see script) -->
+        <div id="course-grid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         4. WHY CHOOSE CORVIT PESHAWAR
+    ====================================================== -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center reveal">
+          <p class="text-sm font-bold uppercase tracking-widest text-accent-greenDark">Why Choose Corvit Peshawar</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Training that ends in a career, not just a certificate</h2>
+          <p class="mt-4 text-slate-600">We focus on practical skill, recognised credentials and real opportunities in the local and remote tech market.</p>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article class="reveal rounded-2xl border border-slate-200 p-6 hover:border-accent-green hover:shadow-lg transition">
+            <div class="grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-accent-cyan">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3v4.5L5 17.25A2 2 0 006.8 20h10.4a2 2 0 001.8-2.75L14.25 7.5V3M8.5 3h7"/></svg>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-navy-900">Hands-on Lab Training</h3>
+            <p class="mt-2 text-sm text-slate-600">Configure real routers, deploy cloud servers and build apps in fully equipped labs &mdash; not just slides.</p>
+          </article>
+
+          <article class="reveal rounded-2xl border border-slate-200 p-6 hover:border-accent-green hover:shadow-lg transition">
+            <div class="grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-accent-cyan">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.3 6.8 19.1l1-5.8L3.5 9.2l5.9-.9L12 3z"/></svg>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-navy-900">Official Certification Prep</h3>
+            <p class="mt-2 text-sm text-slate-600">Structured exam preparation, mock tests and exam strategy for Cisco, AWS, CompTIA and more.</p>
+          </article>
+
+          <article class="reveal rounded-2xl border border-slate-200 p-6 hover:border-accent-green hover:shadow-lg transition">
+            <div class="grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-accent-cyan">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/></svg>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-navy-900">Portfolio-Building Projects</h3>
+            <p class="mt-2 text-sm text-slate-600">Finish every course with real projects you can show to employers and freelance clients.</p>
+          </article>
+
+          <article class="reveal rounded-2xl border border-slate-200 p-6 hover:border-accent-green hover:shadow-lg transition">
+            <div class="grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-accent-cyan">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7H4a1 1 0 00-1 1v10a1 1 0 001 1h16a1 1 0 001-1V8a1 1 0 00-1-1zM8 7V5a1 1 0 011-1h6a1 1 0 011 1v2M3 13h18"/></svg>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-navy-900">Career &amp; Job Placement Help</h3>
+            <p class="mt-2 text-sm text-slate-600">CV reviews, interview coaching and guidance for local software houses and remote roles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CERTIFICATIONS
+    ====================================================== -->
+    <section id="certifications" class="py-20 bg-navy-900 text-white relative overflow-hidden">
+      <div class="hero-grid absolute inset-0 opacity-60" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center reveal">
+          <p class="text-sm font-bold uppercase tracking-widest text-accent-cyan">Certifications</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Credentials employers recognise worldwide</h2>
+          <p class="mt-4 text-slate-300">Our programs prepare you for the vendor exams that open doors in Pakistan and abroad.</p>
+        </div>
+
+        <ul class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+          <li class="reveal rounded-xl border border-white/10 bg-white/5 px-4 py-6 hover:bg-white/10 transition"><p class="font-extrabold text-lg">Cisco</p><p class="text-xs text-slate-400 mt-1">CCNA / CCNP</p></li>
+          <li class="reveal rounded-xl border border-white/10 bg-white/5 px-4 py-6 hover:bg-white/10 transition"><p class="font-extrabold text-lg">AWS</p><p class="text-xs text-slate-400 mt-1">Cloud Practitioner / SAA</p></li>
+          <li class="reveal rounded-xl border border-white/10 bg-white/5 px-4 py-6 hover:bg-white/10 transition"><p class="font-extrabold text-lg">CompTIA</p><p class="text-xs text-slate-400 mt-1">A+ / Network+ / Security+</p></li>
+          <li class="reveal rounded-xl border border-white/10 bg-white/5 px-4 py-6 hover:bg-white/10 transition"><p class="font-extrabold text-lg">EC-Council</p><p class="text-xs text-slate-400 mt-1">CEH</p></li>
+          <li class="reveal rounded-xl border border-white/10 bg-white/5 px-4 py-6 hover:bg-white/10 transition"><p class="font-extrabold text-lg">Python</p><p class="text-xs text-slate-400 mt-1">PCEP / PCAP</p></li>
+          <li class="reveal rounded-xl border border-white/10 bg-white/5 px-4 py-6 hover:bg-white/10 transition"><p class="font-extrabold text-lg">Microsoft</p><p class="text-xs text-slate-400 mt-1">Azure / Office</p></li>
+        </ul>
+        <!-- NOTE: Confirm the exact list of certification tracks/authorisations the institute currently offers before publishing. -->
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         5. SUCCESS STORIES / TESTIMONIALS (scroll-snap slider)
+    ====================================================== -->
+    <section id="stories" class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 reveal">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-widest text-accent-greenDark">Success Stories</p>
+            <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">Our alumni are shipping real products</h2>
+          </div>
+          <div class="flex gap-2">
+            <button id="slide-prev" class="grid h-11 w-11 place-items-center rounded-full border border-slate-300 bg-white text-navy-900 hover:bg-navy-900 hover:text-white transition" aria-label="Previous story">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <button id="slide-next" class="grid h-11 w-11 place-items-center rounded-full border border-slate-300 bg-white text-navy-900 hover:bg-navy-900 hover:text-white transition" aria-label="Next story">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!--
+          ⚠️ PLACEHOLDER CONTENT: Replace every testimonial below with REAL, consented alumni feedback
+          (real names, roles, companies) before going live. Do not publish sample reviews as genuine.
+        -->
+        <div id="story-track" class="no-scrollbar mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4">
+          <figure class="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+            <svg class="h-8 w-8 text-accent-green" fill="currentColor" viewBox="0 0 24 24"><path d="M7.2 6C4.9 7.5 3.5 9.7 3.5 12.6V18h6v-6H6.3c.1-1.4.8-2.5 2.2-3.4L7.2 6zm9.5 0c-2.3 1.5-3.7 3.7-3.7 6.6V18h6v-6h-3.2c.1-1.4.8-2.5 2.2-3.4L16.7 6z"/></svg>
+            <blockquote class="mt-3 text-slate-700 leading-relaxed">[Sample] The hands-on Python labs and project work gave me the confidence to join a software house right after the course.</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-navy-900 text-white font-bold">AB</span>
+              <span><span class="block font-bold text-navy-900">Alumnus Name</span><span class="block text-sm text-slate-500">Junior Python Developer &middot; Software House, Peshawar</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+            <svg class="h-8 w-8 text-accent-green" fill="currentColor" viewBox="0 0 24 24"><path d="M7.2 6C4.9 7.5 3.5 9.7 3.5 12.6V18h6v-6H6.3c.1-1.4.8-2.5 2.2-3.4L7.2 6zm9.5 0c-2.3 1.5-3.7 3.7-3.7 6.6V18h6v-6h-3.2c.1-1.4.8-2.5 2.2-3.4L16.7 6z"/></svg>
+            <blockquote class="mt-3 text-slate-700 leading-relaxed">[Sample] CCNA prep with real equipment made the exam feel familiar. I now manage networks for a growing company.</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-navy-700 text-white font-bold">CD</span>
+              <span><span class="block font-bold text-navy-900">Alumnus Name</span><span class="block text-sm text-slate-500">Network Engineer &middot; Company Name</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+            <svg class="h-8 w-8 text-accent-green" fill="currentColor" viewBox="0 0 24 24"><path d="M7.2 6C4.9 7.5 3.5 9.7 3.5 12.6V18h6v-6H6.3c.1-1.4.8-2.5 2.2-3.4L7.2 6zm9.5 0c-2.3 1.5-3.7 3.7-3.7 6.6V18h6v-6h-3.2c.1-1.4.8-2.5 2.2-3.4L16.7 6z"/></svg>
+            <blockquote class="mt-3 text-slate-700 leading-relaxed">[Sample] The portfolio projects and career guidance helped me land a remote role with an international team.</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-accent-greenDark text-white font-bold">EF</span>
+              <span><span class="block font-bold text-navy-900">Alumnus Name</span><span class="block text-sm text-slate-500">Remote Web Developer &middot; Company Name</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+            <svg class="h-8 w-8 text-accent-green" fill="currentColor" viewBox="0 0 24 24"><path d="M7.2 6C4.9 7.5 3.5 9.7 3.5 12.6V18h6v-6H6.3c.1-1.4.8-2.5 2.2-3.4L7.2 6zm9.5 0c-2.3 1.5-3.7 3.7-3.7 6.6V18h6v-6h-3.2c.1-1.4.8-2.5 2.2-3.4L16.7 6z"/></svg>
+            <blockquote class="mt-3 text-slate-700 leading-relaxed">[Sample] Cloud and AWS training was practical from day one. I earned my certification and moved into a DevOps position.</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-navy-900 text-white font-bold">GH</span>
+              <span><span class="block font-bold text-navy-900">Alumnus Name</span><span class="block text-sm text-slate-500">Cloud / DevOps Engineer &middot; Company Name</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         6. LEAD CAPTURE / INQUIRY FORM
+    ====================================================== -->
+    <section id="enroll" class="py-20 bg-gradient-to-br from-navy-900 to-navy-700 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+
+        <div class="reveal">
+          <p class="text-sm font-bold uppercase tracking-widest text-accent-cyan">Free Career Counseling</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Ready to start? Tell us what you want to learn.</h2>
+          <p class="mt-4 text-slate-300 max-w-lg">Leave your details and our counselor will call you to recommend the right course, schedule and fee plan for your goals.</p>
+          <ul class="mt-6 space-y-3 text-slate-200">
+            <li class="flex items-center gap-3"><svg class="h-5 w-5 text-accent-green" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Honest course &amp; career guidance</li>
+            <li class="flex items-center gap-3"><svg class="h-5 w-5 text-accent-green" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Flexible morning, evening &amp; weekend batches</li>
+            <li class="flex items-center gap-3"><svg class="h-5 w-5 text-accent-green" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>No obligation &mdash; just a conversation</li>
+          </ul>
+        </div>
+
+        <!-- Inquiry form -->
+        <form id="lead-form" class="reveal rounded-2xl bg-white p-6 sm:p-8 text-slate-700 shadow-2xl" novalidate>
+          <h3 class="text-xl font-extrabold text-navy-900">Register your interest</h3>
+
+          <div class="mt-5 space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-navy-900">Full Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" placeholder="e.g. Your full name"
+                     class="mt-1 w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-accent-green focus:ring-2 focus:ring-accent-green/30 outline-none" />
+              <p class="err mt-1 hidden text-xs text-red-600">Please enter your name.</p>
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-navy-900">Phone Number (WhatsApp preferred)</label>
+              <input id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="03XX XXXXXXX"
+                     class="mt-1 w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-accent-green focus:ring-2 focus:ring-accent-green/30 outline-none" />
+              <p class="err mt-1 hidden text-xs text-red-600">Enter a valid Pakistani mobile number (e.g. 03001234567).</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="course" class="block text-sm font-semibold text-navy-900">Course of Interest</label>
+                <select id="course" name="course" required
+                        class="mt-1 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 focus:border-accent-green focus:ring-2 focus:ring-accent-green/30 outline-none">
+                  <option value="">Select a course</option>
+                </select>
+                <p class="err mt-1 hidden text-xs text-red-600">Please choose a course.</p>
+              </div>
+              <div>
+                <label for="area" class="block text-sm font-semibold text-navy-900">City / Area in Peshawar</label>
+                <select id="area" name="area" required
+                        class="mt-1 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 focus:border-accent-green focus:ring-2 focus:ring-accent-green/30 outline-none">
+                  <option value="">Select your area</option>
+                  <option>University Road</option>
+                  <option>Hayatabad</option>
+                  <option>Saddar</option>
+                  <option>Gulbahar</option>
+                  <option>Ring Road</option>
+                  <option>Peshawar Cantt</option>
+                  <option>Other (Khyber Pakhtunkhwa)</option>
+                </select>
+                <p class="err mt-1 hidden text-xs text-red-600">Please select your area.</p>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="mt-6 w-full rounded-lg bg-accent-green px-6 py-3.5 font-bold text-navy-900 shadow-glow hover:bg-emerald-400 transition">
+            Book My Free Consultation
+          </button>
+          <p class="mt-3 text-center text-xs text-slate-500">We respect your privacy and will only contact you about your inquiry.</p>
+
+          <!-- Success message -->
+          <div id="form-success" class="hidden mt-4 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       7. FOOTER (also serves as the Contact section)
+  ====================================================== -->
+  <footer id="contact" class="bg-navy-900 text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <div>
+        <a href="#home" class="flex items-center gap-2.5">
+          <span class="grid place-items-center h-9 w-9 rounded-lg bg-accent-green text-navy-900 font-extrabold text-lg">C</span>
+          <span class="text-white font-extrabold">Corvit Systems Peshawar</span>
+        </a>
+        <p class="mt-4 text-sm leading-relaxed">Professional IT training and certification preparation to help you build a rewarding tech career.</p>
+        <div class="mt-5 flex gap-3">
+          <!-- TODO: replace # with the institute's real social profile URLs -->
+          <a href="#" aria-label="Facebook" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-accent-green hover:text-navy-900 transition">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.5-3.2h-3.2V7.7c0-.9.4-1.7 1.8-1.7h1.5V3.2S15.5 3 14.3 3C11.8 3 10.2 4.5 10.2 7.2v2.6H7.5V13h2.7v8h3.3z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-accent-green hover:text-navy-900 transition">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.9 8.8H3.6V20h3.3V8.8zM5.2 3.5a1.9 1.9 0 100 3.8 1.9 1.9 0 000-3.8zM20.4 13.5c0-3-1.6-5-4.3-5-1.3 0-2.3.7-2.7 1.4V8.8h-3.2V20h3.3v-6.2c0-1.6.8-2.6 2-2.6 1.3 0 1.9.9 1.9 2.6V20h3.3l-.3-6.5z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-accent-green hover:text-navy-900 transition">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold">Quick Links</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="#home" class="hover:text-accent-cyan">Home</a></li>
+          <li><a href="#courses" class="hover:text-accent-cyan">Courses</a></li>
+          <li><a href="#certifications" class="hover:text-accent-cyan">Certifications</a></li>
+          <li><a href="#stories" class="hover:text-accent-cyan">Success Stories</a></li>
+          <li><a href="#about" class="hover:text-accent-cyan">About Us</a></li>
+          <li><a href="#enroll" class="hover:text-accent-cyan">Enroll Now</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold">Popular Courses</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="#courses" class="hover:text-accent-cyan">Python &amp; AI</a></li>
+          <li><a href="#courses" class="hover:text-accent-cyan">Web &amp; App Development</a></li>
+          <li><a href="#courses" class="hover:text-accent-cyan">CCNA / Network Engineering</a></li>
+          <li><a href="#courses" class="hover:text-accent-cyan">AWS &amp; Cloud Computing</a></li>
+          <li><a href="#courses" class="hover:text-accent-cyan">Cyber Security</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold">Contact Us</h4>
+        <!-- TODO: replace placeholder phone/email/address with the institute's real details -->
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex gap-3"><span aria-hidden="true">📍</span><span>University Road, Peshawar,<br />Khyber Pakhtunkhwa, Pakistan</span></li>
+          <li class="flex gap-3"><span aria-hidden="true">📞</span><a href="tel:+920000000000" class="hover:text-accent-cyan">+92 000 0000000</a></li>
+          <li class="flex gap-3"><span aria-hidden="true">✉️</span><a href="mailto:info@example.com" class="hover:text-accent-cyan">info@example.com</a></li>
+          <li class="flex gap-3"><span aria-hidden="true">🕒</span><span>Mon&ndash;Sat: 9:00 AM &ndash; 8:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-slate-400 flex flex-col sm:flex-row justify-between gap-2">
+        <p>&copy; <span id="year"></span> Corvit Systems Peshawar. All rights reserved.</p>
+        <p><a href="#" class="hover:text-accent-cyan">Privacy Policy</a> &middot; <a href="#" class="hover:text-accent-cyan">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Floating WhatsApp-style quick action (replace the number) -->
+  <a href="#enroll" class="fixed bottom-5 right-5 z-40 sm:hidden rounded-full bg-accent-green px-5 py-3 font-bold text-navy-900 shadow-glow" aria-label="Book free consultation">Enroll Now</a>
+
+
+  <!-- =====================================================
+       COURSE DETAILS MODAL
+  ====================================================== -->
+  <div id="modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal-backdrop" class="absolute inset-0 bg-navy-900/80 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 sm:p-8 shadow-2xl">
+      <button id="modal-close" class="absolute right-4 top-4 rounded-full p-2 text-slate-500 hover:bg-slate-100" aria-label="Close">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <span id="modal-level" class="inline-block rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800"></span>
+      <h3 id="modal-title" class="mt-3 text-2xl font-extrabold text-navy-900"></h3>
+      <p id="modal-desc" class="mt-2 text-slate-600"></p>
+      <p class="mt-4 text-sm font-bold text-navy-900">What you will learn</p>
+      <ul id="modal-topics" class="mt-2 space-y-2 text-sm text-slate-700"></ul>
+      <p id="modal-duration" class="mt-4 text-sm text-slate-500"></p>
+      <button id="modal-enroll" class="mt-6 w-full rounded-lg bg-accent-green px-6 py-3 font-bold text-navy-900 hover:bg-emerald-400 transition">Enquire About This Course</button>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT (vanilla, no dependencies)
+  ====================================================== -->
+  <script>
+  (() => {
+    'use strict';
+
+    /* ---------- DATA: edit course content here ---------- */
+    const COURSES = [
+      { id: 'python-ai', cat: 'dev', title: 'Python & AI', icon: '🐍', duration: '3–4 Months', level: 'Beginner → Advanced',
+        desc: 'Learn Python programming, data analysis and the foundations of machine learning and AI.',
+        topics: ['Python fundamentals & OOP', 'Data analysis with Pandas & NumPy', 'Machine learning basics with scikit-learn', 'Real-world AI mini projects'] },
+      { id: 'web-app', cat: 'dev', title: 'Web & App Development', icon: '💻', duration: '4–6 Months', level: 'Beginner → Advanced',
+        desc: 'Build modern responsive websites and apps using the technologies employers ask for.',
+        topics: ['HTML, CSS, JavaScript & Tailwind', 'React and Node.js', 'Databases & REST APIs', 'Deploy a full-stack portfolio project'] },
+      { id: 'ccna', cat: 'infra', title: 'CCNA / Network Engineering', icon: '🌐', duration: '3 Months', level: 'Beginner → Intermediate',
+        desc: 'Master routing, switching and network fundamentals with real Cisco-style lab practice.',
+        topics: ['IP addressing & subnetting', 'Routing & switching, VLANs, OSPF', 'Network security & automation basics', 'CCNA exam preparation & mock tests'] },
+      { id: 'aws-cloud', cat: 'infra', title: 'AWS & Cloud Computing', icon: '☁️', duration: '2–3 Months', level: 'Intermediate',
+        desc: 'Design, deploy and manage cloud infrastructure on AWS and prepare for certification.',
+        topics: ['EC2, S3, VPC, IAM and RDS', 'Cloud architecture & cost management', 'Intro to DevOps & automation', 'AWS certification exam preparation'] },
+      { id: 'cyber', cat: 'security', title: 'Cyber Security', icon: '🛡️', duration: '3–4 Months', level: 'Intermediate → Advanced',
+        desc: 'Learn to defend systems and think like an attacker through ethical hacking labs.',
+        topics: ['Security fundamentals & networking', 'Ethical hacking & penetration testing', 'Vulnerability assessment tools', 'Security+ / CEH exam preparation'] },
+      { id: 'design', cat: 'creative', title: 'Graphic Design & Video Editing', icon: '🎨', duration: '2–3 Months', level: 'Beginner → Intermediate',
+        desc: 'Create professional visuals, branding and video content for clients and social media.',
+        topics: ['Photoshop & Illustrator', 'Branding and social media design', 'Video editing with Premiere Pro', 'Build a freelancing-ready portfolio'] }
+    ];
+
+    const $  = (sel, root = document) => root.querySelector(sel);
+    const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+
+    /* ---------- Mobile menu toggle ---------- */
+    const menuBtn = $('#menu-btn'), mobileMenu = $('#mobile-menu');
+    const setMenu = (open) => {
+      mobileMenu.classList.toggle('hidden', !open);
+      $('#icon-open').classList.toggle('hidden', open);
+      $('#icon-close').classList.toggle('hidden', !open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+    };
+    menuBtn.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+    $$('a', mobileMenu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+    /* ---------- Render course cards ---------- */
+    const grid = $('#course-grid');
+    const renderCourses = (filter = 'all') => {
+      grid.innerHTML = COURSES
+        .filter(c => filter === 'all' || c.cat === filter)
+        .map(c => `
+          <article class="reveal visible flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-xl hover:border-accent-green transition">
+            <div class="grid h-14 w-14 place-items-center rounded-xl bg-gradient-to-br from-navy-900 to-navy-700 text-2xl" aria-hidden="true">${c.icon}</div>
+            <h3 class="mt-4 text-xl font-extrabold text-navy-900">${c.title}</h3>
+            <p class="mt-2 flex-1 text-sm text-slate-600">${c.desc}</p>
+            <dl class="mt-4 grid grid-cols-2 gap-3 text-xs">
+              <div class="rounded-lg bg-slate-50 p-3"><dt class="text-slate-500">Duration</dt><dd class="mt-0.5 font-bold text-navy-900">${c.duration}</dd></div>
+              <div class="rounded-lg bg-slate-50 p-3"><dt class="text-slate-500">Level</dt><dd class="mt-0.5 font-bold text-navy-900">${c.level}</dd></div>
+            </dl>
+            <button data-course="${c.id}" class="view-details mt-5 w-full rounded-lg border-2 border-navy-900 px-4 py-2.5 text-sm font-bold text-navy-900 hover:bg-navy-900 hover:text-white transition">
+              View Details
+            </button>
+          </article>`).join('');
+    };
+    renderCourses();
+
+    /* ---------- Tab switching (course filter) ---------- */
+    const tabs = $$('.tab-btn');
+    const styleTab = (btn, active) => {
+      btn.className = 'tab-btn rounded-full px-5 py-2 text-sm font-bold transition ' +
+        (active ? 'bg-navy-900 text-white shadow' : 'bg-white text-navy-900 border border-slate-300 hover:border-navy-900');
+      btn.setAttribute('aria-selected', String(active));
+    };
+    tabs.forEach(btn => btn.addEventListener('click', () => {
+      tabs.forEach(b => styleTab(b, b === btn));
+      renderCourses(btn.dataset.filter);
+    }));
+    tabs.forEach((b, i) => styleTab(b, i === 0));
+
+    /* ---------- Populate the course <select> in the form ---------- */
+    const courseSelect = $('#course');
+    COURSES.forEach(c => courseSelect.add(new Option(c.title, c.title)));
+    courseSelect.add(new Option('Not sure – need guidance', 'Guidance needed'));
+
+    /* ---------- Course details modal ---------- */
+    const modal = $('#modal');
+    let activeCourse = null, lastFocus = null;
+
+    const openModal = (id) => {
+      const c = COURSES.find(x => x.id === id); if (!c) return;
+      activeCourse = c; lastFocus = document.activeElement;
+      $('#modal-title').textContent = c.title;
+      $('#modal-level').textContent = c.level;
+      $('#modal-desc').textContent = c.desc;
+      $('#modal-duration').textContent = 'Duration: ' + c.duration;
+      $('#modal-topics').innerHTML = c.topics.map(t =>
+        `<li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent-green" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span>${t}</span></li>`).join('');
+      modal.classList.remove('hidden'); modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      $('#modal-close').focus();
+    };
+    const closeModal = () => {
+      modal.classList.add('hidden'); modal.classList.remove('flex');
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    };
+    grid.addEventListener('click', (e) => {
+      const btn = e.target.closest('.view-details'); if (btn) openModal(btn.dataset.course);
+    });
+    $('#modal-close').addEventListener('click', closeModal);
+    $('#modal-backdrop').addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
+    $('#modal-enroll').addEventListener('click', () => {
+      if (activeCourse) courseSelect.value = activeCourse.title;
+      closeModal();
+      $('#enroll').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    /* ---------- Testimonial slider (scroll-snap + buttons + autoplay) ---------- */
+    const track = $('#story-track');
+    const step = () => track.firstElementChild.getBoundingClientRect().width + 24;
+    const slide = (dir) => {
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+      if (dir > 0 && atEnd) track.scrollTo({ left: 0, behavior: 'smooth' });
+      else if (dir < 0 && track.scrollLeft <= 8) track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+      else track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+    };
+    $('#slide-next').addEventListener('click', () => slide(1));
+    $('#slide-prev').addEventListener('click', () => slide(-1));
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion) {
+      let timer = setInterval(() => slide(1), 6000);
+      const pause = () => clearInterval(timer);
+      const resume = () => { clearInterval(timer); timer = setInterval(() => slide(1), 6000); };
+      ['mouseenter', 'touchstart', 'focusin'].forEach(ev => track.addEventListener(ev, pause, { passive: true }));
+      ['mouseleave', 'touchend', 'focusout'].forEach(ev => track.addEventListener(ev, resume, { passive: true }));
+    }
+
+    /* ---------- Lead form: validation + submission ---------- */
+    const form = $('#lead-form'), success = $('#form-success');
+    const PK_MOBILE = /^(?:\+92|0092|92|0)?3\d{9}$/;   // e.g. 03001234567, +923001234567
+
+    const validate = (field) => {
+      const value = field.value.trim().replace(/[\s-]/g, field.name === 'phone' ? '' : '$&');
+      let ok = value.length > 0;
+      if (field.name === 'phone') ok = PK_MOBILE.test(value);
+      const msg = field.parentElement.querySelector('.err');
+      msg.classList.toggle('hidden', ok);
+      field.classList.toggle('border-red-500', !ok);
+      field.setAttribute('aria-invalid', String(!ok));
+      return ok;
+    };
+    const fields = $$('input, select', form);
+    fields.forEach(f => f.addEventListener('blur', () => validate(f)));
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const allValid = fields.map(validate).every(Boolean);   // run all, don't short-circuit
+      if (!allValid) return;
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      const btn = $('button[type="submit"]', form);
+      btn.disabled = true; btn.textContent = 'Sending…';
+
+      try {
+        /* 🔌 CONNECT YOUR BACKEND HERE. Examples:
+           await fetch('/api/leads', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+           — or send to Formspree / Google Apps Script / your CRM webhook.
+           Below is a short simulated delay so the UI flow can be tested. */
+        await new Promise(r => setTimeout(r, 700));
+
+        success.textContent = `Thank you, ${data.name.split(' ')[0]}! We've received your interest in "${data.course}". Our counselor will contact you shortly.`;
+        success.classList.remove('hidden');
+        form.reset();
+      } catch (err) {
+        success.className = 'mt-4 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-800';
+        success.textContent = 'Something went wrong. Please try again or call us directly.';
+      } finally {
+        btn.disabled = false; btn.textContent = 'Book My Free Consultation';
+      }
+    });
+
+    /* ---------- Animated stat counters ---------- */
+    const animateCount = (el) => {
+      const target = +el.dataset.target, duration = 1400, start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        el.textContent = Math.floor(target * (1 - Math.pow(1 - p, 3))).toLocaleString();
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    /* ---------- Reveal-on-scroll + counters via IntersectionObserver ---------- */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        $$('.counter', entry.target).forEach(animateCount);
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.15 });
+    $$('.reveal').forEach(el => io.observe(el));
+    io.observe($('#home dl'));   // trigger counters when the stats bar is visible
+    if (reduceMotion) $$('.counter').forEach(el => el.textContent = (+el.dataset.target).toLocaleString());
+
+    /* ---------- Highlight active nav link on scroll ---------- */
+    const sections = $$('section[id]');
+    const links = $$('.nav-link');
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        links.forEach(l => l.classList.toggle('text-accent-cyan', l.getAttribute('href') === '#' + en.target.id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(s => spy.observe(s));
+
+    /* ---------- Footer year ---------- */
+    $('#year').textContent = new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>
